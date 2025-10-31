@@ -1,5 +1,6 @@
 <?php
 require_once 'vendor/autoload.php'; // Autoload files using Composer autoload
+
 use Proxmox\Request;
 
 $configure = [
@@ -14,5 +15,3 @@ Request::Login($configure); // Login ..
 # Quick Usage
 // Request($path, array $params = null, $method="GET")
 print_r( Request::Request('/nodes', null, 'GET') ); // List Nodes
-
-?>
