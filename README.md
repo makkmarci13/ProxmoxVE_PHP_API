@@ -675,3 +675,11 @@ Nodes::tasksStatus($node, $upid)
 Nodes::createVzdump($node, $data = [])
 Nodes::VzdumpExtractConfig($node)
 ```
+
+## Capabilities
+
+```php
+Nodes::QemuCpuCapabilities(string $node)
+Nodes::QemuMachineCapabilities(string $node)
+Nodes::QemuMigrationCapabilities(string $node)
+```

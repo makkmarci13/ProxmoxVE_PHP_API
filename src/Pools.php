@@ -20,7 +20,6 @@ class Pools
 {
     /**
      * Read system log
-     *
      * GET /api2/json/pools
      *
      * @throws ProxmoxException
@@ -32,7 +31,6 @@ class Pools
 
     /**
      * Read system log
-     *
      * GET /api2/json/pools/{poolId}
      *
      * @param string $pool_id
@@ -46,7 +44,6 @@ class Pools
 
     /**
      * Read system log
-     *
      * GET /api2/json/pools/{poolId}
      *
      * @param string $pool_id

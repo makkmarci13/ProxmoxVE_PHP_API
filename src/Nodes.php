@@ -21,8 +21,11 @@ class Nodes
     /**
      * Cluster node index.
      * GET /api2/json/nodes
+     *
+     * @return mixed
+     * @throws ProxmoxException
      */
-    public function listNodes()
+    public function listNodes(): mixed
     {
         return Request::Request("/nodes");
     }
@@ -30,9 +33,12 @@ class Nodes
     /**
      * Directory index for apt (Advanced Package Tool).
      * GET /api2/json/nodes/{node}/apt
-     * @param string $node The cluster node name.
+     *
+     * @param string $node
+     * @return mixed
+     * @throws ProxmoxException
      */
-    public function Apt($node)
+    public function Apt(string $node): mixed
     {
         return Request::Request("/nodes/$node/apt");
     }
@@ -40,10 +46,13 @@ class Nodes
     /**
      * Directory index for apt (Advanced Package Tool).
      * GET /api2/json/nodes/{node}/apt
-     * @param string $node The cluster node name.
+     *
+     * @param string $node
      * @param array $data
+     * @return mixed
+     * @throws ProxmoxException
      */
-    public function updateApt($node, $data = [])
+    public function updateApt(string $node, array $data = []): mixed
     {
         return Request::Request("/nodes/$node/apt/update", $data, "POST");
     }
@@ -51,21 +60,32 @@ class Nodes
     /**
      * Get package changelogs.
      * GET /api2/json/nodes/{node}/apt/changelog
-     * @param string $node The cluster node name.
-     * @param string $name Package name.
+     *
+     * @param string $node
+     * @param string|null $name
+     * @param string|null $version
+     * @return mixed
+     * @throws ProxmoxException
      */
-    public function AptChangelog($node, $name = null)
+    public function AptChangelog(string $node, ?string $name = null, ?string $version = null): mixed
     {
-        $optional['name'] = !empty($name) ? $name : null;
-        return Request::Request("/nodes/$node/apt/changelog", $optional);
+        $params = array_filter([
+            'name' => $name,
+            'version' => $version,
+        ]);
+
+        return Request::Request("/nodes/$node/apt/changelog", $params);
     }
 
     /**
      * List available updates.
      * GET /api2/json/nodes/{node}/apt/update
-     * @param string $node The cluster node name.
+     *
+     * @param string $node
+     * @return mixed
+     * @throws ProxmoxException
      */
-    public function AptUpdate($node)
+    public function AptUpdate(string $node): mixed
     {
         return Request::Request("/nodes/$node/apt/update");
     }
@@ -73,12 +93,54 @@ class Nodes
     /**
      * This is used to resynchronize the package index files from their sources (apt-get update).
      * POST /api2/json/nodes/{node}/apt/update
-     * @param string $node The cluster node name.
-     * @param array $data
+     *
+     * @param $node
+     * @param $data
+     * @return mixed
+     * @throws ProxmoxException
      */
-    public function createAptUpdate($node, $data = [])
+    public function createAptUpdate($node, $data = []): mixed
     {
         return Request::Request("/nodes/$node/apt/update", $data, "POST");
+    }
+
+    /**
+     * List all custom and default CPU models.
+     * GET /api2/json/nodes/{node}/capabilities/qemu/cpu
+     *
+     * @param string $node
+     * @return mixed
+     * @throws ProxmoxException
+     */
+    public function QemuCpuCapabilities(string $node): mixed
+    {
+        return Request::Request("/nodes/$node/capabilities/qemu/cpu");
+    }
+
+    /**
+     * Get available QEMU/KVM machine types.
+     * GET /api2/json/nodes/{node}/capabilities/qemu/machines
+     *
+     * @param string $node
+     * @return mixed
+     * @throws ProxmoxException
+     */
+    public function QemuMachineCapabilities(string $node): mixed
+    {
+        return Request::Request("/nodes/$node/capabilities/qemu/machines");
+    }
+
+    /**
+     * Get node-specific QEMU migration capabilities of the node. Requires the 'Sys.Audit' permission on '/nodes/<node>'.
+     * GET /api2/json/nodes/{node}/capabilities/qemu/migration
+     *
+     * @param string $node
+     * @return mixed
+     * @throws ProxmoxException
+     */
+    public function QemuMigrationCapabilities(string $node): mixed
+    {
+        return Request::Request("/nodes/$node/capabilities/qemu/migration");
     }
 
     /**
@@ -1904,10 +1966,11 @@ class Nodes
      * @param string $ds The list of datasources you want to display.
      * @param enum $timeframe Specify the time frame you are interested in.
      */
-    public function qemuRrd($node, $vmid, $ds = null, $timeframe = null)
+    public function qemuRrd($node, $vmid, $ds = null, $timeframe = null, $cf = null)
     {
         $optional['ds'] = !empty($ds) ? $ds : null;
         $optional['timeframe'] = !empty($timeframe) ? $timeframe : null;
+        $optional['cf'] = !empty($cf) ? $cf : null;
         return Request::Request("/nodes/$node/qemu/$vmid/rrd", $optional);
     }
 
@@ -1917,10 +1980,12 @@ class Nodes
      * @param string $node The cluster node name.
      * @param integer $vmid The (unique) ID of the VM.
      * @param enum $timeframe Specify the time frame you are interested in.
+     * @param string $cf The RRD consolidation function, AVARAGE|MAX
      */
-    public function qemuRrddata($node, $vmid, $timeframe = null)
+    public function qemuRrddata($node, $vmid, $timeframe = null, $cf = null)
     {
         $optional['timeframe'] = !empty($timeframe) ? $timeframe : null;
+        $optional['cf'] = !empty($cf) ? $cf : null;
         return Request::Request("/nodes/$node/qemu/$vmid/rrddata", $optional);
     }
 
