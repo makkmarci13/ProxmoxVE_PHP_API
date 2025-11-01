@@ -41,7 +41,7 @@ class Access
      * POST /api2/json/access/domains
      * @param array $data
      */
-    public function addDomain($data = array())
+    public function addDomain($data = [])
     {
         return Request::Request("/access/domains", $data, 'POST');
     }
@@ -62,7 +62,7 @@ class Access
      * @param string $realm Authentication domain ID
      * @param array $data
      */
-    public function updateDomain($realm, $data = array())
+    public function updateDomain($realm, $data = [])
     {
         return Request::Request("/access/domains/$realm", $data, 'PUT');
     }
@@ -91,7 +91,7 @@ class Access
      * POST /api2/json/access/groups
      * @param array $data
      */
-    public function createGroup($data = array())
+    public function createGroup($data = [])
     {
         return Request::Request("/access/groups", $data, 'POST');
     }
@@ -112,7 +112,7 @@ class Access
      * @param string $groupid
      * @param array $data
      */
-    public function updateGroup($groupid, $data = array())
+    public function updateGroup($groupid, $data = [])
     {
         return Request::Request("/access/groups/$groupid", $data, 'POST');
     }
@@ -141,7 +141,7 @@ class Access
      * POST /api2/json/access/roles
      * @param array $data
      */
-    public function createRole($data = array())
+    public function createRole($data = [])
     {
         return Request::Request("/access/roles", $data, 'POST');
     }
@@ -162,7 +162,7 @@ class Access
      * @param string $roleid
      * @param array $data
      */
-    public function updateRole($roleid, $data = array())
+    public function updateRole($roleid, $data = [])
     {
         return Request::Request("/access/roles/$roleid", $data, 'PUT');
     }
@@ -191,7 +191,7 @@ class Access
      * POST /api2/json/access/users
      * @param array $data
      */
-    public function createUser($data = array())
+    public function createUser($data = [])
     {
         return Request::Request("/access/users", $data, 'POST');
     }
@@ -212,7 +212,7 @@ class Access
      * @param string $userid
      * @param array $data
      */
-    public function updateUser($userid, $data = array())
+    public function updateUser($userid, $data = [])
     {
         return Request::Request("/access/users/$userid", $data, 'PUT');
     }
@@ -232,7 +232,7 @@ class Access
      * PUT /api2/json/access/password
      * @param array $data
      */
-    public function changeUserPassword($data = array())
+    public function changeUserPassword($data = [])
     {
         return Request::Request("/access/password", $data, 'PUT');
     }
@@ -251,7 +251,7 @@ class Access
      * PUT /api2/json/access/acl
      * @param array $data
      */
-    public function updateAcl($data = array())
+    public function updateAcl($data = [])
     {
         return Request::Request("/access/acl", $data, 'PUT');
     }
@@ -261,7 +261,7 @@ class Access
      * POST /api2/json/access/ticket
      * @param array $data
      */
-    public function createTicket($data = array())
+    public function createTicket($data = [])
     {
         return Request::Request("/access/ticket", $data, 'POST');
     }

@@ -41,7 +41,7 @@ class Cluster
      * POST /api2/json/cluster/backup
      * @param array $data
      */
-    public function createBackup($data = array())
+    public function createBackup($data = [])
     {
         return Request::Request("/cluster/backup", $data, 'POST');
     }
@@ -62,7 +62,7 @@ class Cluster
      * @param string $id The job ID.
      * @param array $data
      */
-    public function updateBackup($id, $data = array())
+    public function updateBackup($id, $data = [])
     {
         return Request::Request("/cluster/backup/$id", $data, 'PUT');
     }
@@ -127,7 +127,7 @@ class Cluster
      * POST /api2/json/cluster/firewall/aliases
      * @param array $data
      */
-    public function createFirewallAliase($data = array())
+    public function createFirewallAliase($data = [])
     {
         return Request::Request("/cluster/firewall/aliases", $data, 'POST');
     }
@@ -148,7 +148,7 @@ class Cluster
      * @param string $name Alias name.
      * @param array $data
      */
-    public function updateFirewallAliase($name, $data = array())
+    public function updateFirewallAliase($name, $data = [])
     {
         return Request::Request("/cluster/firewall/aliases/$name", $data, 'PUT');
     }
@@ -177,7 +177,7 @@ class Cluster
      * POST /api2/json/cluster/firewall/groups
      * @param array $data
      */
-    public function createFirewallGroup($data = array())
+    public function createFirewallGroup($data = [])
     {
         return Request::Request("/cluster/firewall/groups", $data, 'POST');
     }
@@ -198,7 +198,7 @@ class Cluster
      * @param string $group Security Group name.
      * @param array $data
      */
-    public function createRuleFirewallGroup($group, $data = array())
+    public function createRuleFirewallGroup($group, $data = [])
     {
         return Request::Request("/cluster/firewall/groups/$group", $data, 'POST');
     }
@@ -231,7 +231,7 @@ class Cluster
      * @param integer $pos Update rule at position <pos>.
      * @param array $data
      */
-    public function setFirewallGroupPos($group, $pos, $data = array())
+    public function setFirewallGroupPos($group, $pos, $data = [])
     {
         return Request::Request("/cluster/firewall/groups/$group/$pos", $data, 'PUT');
     }
@@ -261,7 +261,7 @@ class Cluster
      * POST /api2/json/cluster/firewall/ipset
      * @param array $data
      */
-    public function createFirewallIpset($data = array())
+    public function createFirewallIpset($data = [])
     {
         return Request::Request("/cluster/firewall/ipset", $data, 'POST');
     }
@@ -282,7 +282,7 @@ class Cluster
      * @param string $name IP set name.
      * @param array $data
      */
-    public function addFirewallIpsetName($name, $data = array())
+    public function addFirewallIpsetName($name, $data = [])
     {
         return Request::Request("/cluster/firewall/ipset/$name", $data, 'POST');
     }
@@ -311,7 +311,7 @@ class Cluster
      * GET /api2/json/cluster/firewall/rules
      * @param array $data
      */
-    public function createFirewallRules($data = array())
+    public function createFirewallRules($data = [])
     {
         return Request::Request("/cluster/firewall/rules", $data, 'POST');
     }
@@ -332,7 +332,7 @@ class Cluster
      * @param integer $pos Update rule at position <pos>.
      * @param array $data
      */
-    public function setFirewallRulesPos($pos, $data = array())
+    public function setFirewallRulesPos($pos, $data = [])
     {
         return Request::Request("/cluster/firewall/rules/$pos", $data, 'PUT');
     }
@@ -370,7 +370,7 @@ class Cluster
      * PUT /api2/json/cluster/firewall/options
      * @param array $data
      */
-    public function setFirewallOptions($data = array())
+    public function setFirewallOptions($data = [])
     {
         return Request::Request("/cluster/firewall/options", $data, 'PUT');
     }
@@ -426,7 +426,7 @@ class Cluster
      * POST /api2/json/cluster/ha/resources
      * @param array $data
      */
-    public function createReplication($data = array())
+    public function createReplication($data = [])
     {
         return Request::Request("/cluster/replication", $data, "POST");
     }
@@ -447,7 +447,7 @@ class Cluster
      * @param string $id Replication Job ID. The ID is composed of a Guest ID and a job number, separated by a hyphen, i.e. '<GUEST>-<JOBNUM>'.
      * @param array $data
      */
-    public function updateReplication($id, $data = array())
+    public function updateReplication($id, $data = [])
     {
         return Request::Request("/cluster/replication/$id", $data, "PUT");
     }
@@ -498,7 +498,7 @@ class Cluster
      * PUT /api2/json/cluster/options
      * @param array $data
      */
-    public function setOptions($data = array())
+    public function setOptions($data = [])
     {
         return Request::Request("/cluster/options", $data, "PUT");
     }

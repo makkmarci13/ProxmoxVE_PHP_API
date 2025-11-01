@@ -35,7 +35,7 @@ class Storage
      * POST /api2/json/storage
      * @param array $data
      */
-    public function createStorage($data = array())
+    public function createStorage($data = [])
     {
         return Request::Request("/storage", $data, 'POST');
     }
@@ -56,7 +56,7 @@ class Storage
      * @param string $storage The storage identifier.
      * @param array $data
      */
-    public function updateStorage($storage, $data = array())
+    public function updateStorage($storage, $data = [])
     {
         return Request::Request("/storage/$storage", $data, 'PUT');
     }

@@ -43,7 +43,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function updateApt($node, $data = array())
+    public function updateApt($node, $data = [])
     {
         return Request::Request("/nodes/$node/apt/update", $data, "POST");
     }
@@ -76,7 +76,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createAptUpdate($node, $data = array())
+    public function createAptUpdate($node, $data = [])
     {
         return Request::Request("/nodes/$node/apt/update", $data, "POST");
     }
@@ -108,7 +108,7 @@ class Nodes
      * @param enum $flag The ceph flag to set/unset
      * @param array $data
      */
-    public function setCephFlags($node, $flag, $data = array())
+    public function setCephFlags($node, $flag, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/flags/$flag", $data, "POST");
     }
@@ -130,7 +130,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createCephMgr($node, $data = array())
+    public function createCephMgr($node, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/mgr", $data, "POST");
     }
@@ -162,7 +162,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createCephMon($node, $data = array())
+    public function createCephMon($node, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/mon", $data, "POST");
     }
@@ -194,7 +194,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createCephOsd($node, $data = array())
+    public function createCephOsd($node, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/osd", $data, "POST");
     }
@@ -217,7 +217,7 @@ class Nodes
      * @param string $osdid OSD ID
      * @param array $data
      */
-    public function CephOsdIn($node, $osdid, $data = array())
+    public function CephOsdIn($node, $osdid, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/osd/$osdid/in", $data, "POST");
     }
@@ -229,7 +229,7 @@ class Nodes
      * @param string $osdid OSD ID
      * @param array $data
      */
-    public function CephOsdOut($node, $osdid, $data = array())
+    public function CephOsdOut($node, $osdid, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/osd/$osdid/out", $data, "POST");
     }
@@ -250,7 +250,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createCephPool($node, $data = array())
+    public function createCephPool($node, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/pools", $data, "POST");
     }
@@ -301,7 +301,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createCephInit($node, $data = array())
+    public function createCephInit($node, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/init", $data, "POST");
     }
@@ -336,7 +336,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function CephStart($node, $data = array())
+    public function CephStart($node, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/start", $data, "POST");
     }
@@ -347,7 +347,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function CephStop($node, $data = array())
+    public function CephStop($node, $data = [])
     {
         return Request::Request("/nodes/$node/ceph/stop", $data, "POST");
     }
@@ -378,7 +378,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function Disk($node, $data = array())
+    public function Disk($node, $data = [])
     {
         return Request::Request("/nodes/$node/disks", $data, "POST");
     }
@@ -431,7 +431,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createFirewallRule($node, $data = array())
+    public function createFirewallRule($node, $data = [])
     {
         return Request::Request("/nodes/$node/firewall/rules", $data, "POST");
     }
@@ -454,7 +454,7 @@ class Nodes
      * @param integer $pos Update rule at position <pos>.
      * @param array $data
      */
-    public function setFirewallRulePos($node, $pos, $data = array())
+    public function setFirewallRulePos($node, $pos, $data = [])
     {
         return Request::Request("/nodes/$node/firewall/rules/$pos", $data, "PUT");
     }
@@ -496,7 +496,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function setFirewallRuleOptions($node, $data = array())
+    public function setFirewallRuleOptions($node, $data = [])
     {
         return Request::Request("/cluster/firewall/options", $data, "PUT");
     }
@@ -517,7 +517,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createLxc($node, $data = array())
+    public function createLxc($node, $data = [])
     {
         return Request::Request("/nodes/$node/lxc", $data, "POST");
     }
@@ -573,7 +573,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createLxcFirewallAliase($node, $vmid, $data = array())
+    public function createLxcFirewallAliase($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/firewall/aliases", $data, 'POST');
     }
@@ -598,7 +598,7 @@ class Nodes
      * @param string $name Alias name.
      * @param array $data
      */
-    public function updateLxcFirewallAliaseName($node, $vmid, $name, $data = array())
+    public function updateLxcFirewallAliaseName($node, $vmid, $name, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/firewall/aliases/$name", $data, 'PUT');
     }
@@ -633,7 +633,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createLxcFirewallIpset($node, $vmid, $data = array())
+    public function createLxcFirewallIpset($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/firewall/ipset", $data, "POST");
     }
@@ -658,7 +658,7 @@ class Nodes
      * @param string $name IP set name.
      * @param array $data
      */
-    public function addLxcFirewallIpsetName($node, $vmid, $name, $data = array())
+    public function addLxcFirewallIpsetName($node, $vmid, $name, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/firewall/ipset/$name", $data, 'POST');
     }
@@ -697,7 +697,7 @@ class Nodes
      * @param string $cidr Network/IP specification in CIDR format.
      * @param array $data
      */
-    public function updateLxcFirewallIpsetNameCidr($node, $vmid, $name, $cidr, $data = array())
+    public function updateLxcFirewallIpsetNameCidr($node, $vmid, $name, $cidr, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/firewall/ipset/$name/$cidr", $data, 'PUT');
     }
@@ -733,7 +733,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createLxcFirewallRules($node, $vmid, $data = array())
+    public function createLxcFirewallRules($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/firewall/rules", $data, 'POST');
     }
@@ -756,7 +756,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function setLxcFirewallRulesPos($node, $vmid, $pos, $data = array())
+    public function setLxcFirewallRulesPos($node, $vmid, $pos, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/firewall/rules/$pos", $data, "PUT");
     }
@@ -805,7 +805,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function setLxcFirewallOptions($node, $vmid, $data = array())
+    public function setLxcFirewallOptions($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/firewall/options", $data, 'PUT');
     }
@@ -828,7 +828,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createLxcSnapshot($node, $vmid, $data = array())
+    public function createLxcSnapshot($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/snapshot", $data, 'POST');
     }
@@ -877,7 +877,7 @@ class Nodes
      * @param string $snapname The name of the snapshot.
      * @param array $data
      */
-    public function lxcSnapshotConfig($node, $vmid, $snapname, $data = array())
+    public function lxcSnapshotConfig($node, $vmid, $snapname, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/snapshot/$snapname/config", $data, 'PUT');
     }
@@ -890,7 +890,7 @@ class Nodes
      * @param string $snapname The name of the snapshot.
      * @param array $data
      */
-    public function lxcSnapshotRollback($node, $vmid, $snapname, $data = array())
+    public function lxcSnapshotRollback($node, $vmid, $snapname, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/snapshot/$snapname/rollback", $data, 'POST');
     }
@@ -924,7 +924,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcResume($node, $vmid, $data = array())
+    public function lxcResume($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/status/resume", $data, 'POST');
     }
@@ -936,7 +936,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcShutdown($node, $vmid, $data = array())
+    public function lxcShutdown($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/status/shutdown", $data, 'POST');
     }
@@ -948,7 +948,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcStart($node, $vmid, $data = array())
+    public function lxcStart($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/status/start", $data, 'POST');
     }
@@ -960,7 +960,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcStop($node, $vmid, $data = array())
+    public function lxcStop($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/status/stop", $data, 'POST');
     }
@@ -972,7 +972,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcReboot($node, $vmid, $data = array())
+    public function lxcReboot($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/status/reboot", $data, 'POST');
     }
@@ -984,7 +984,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcSuspend($node, $vmid, $data = array())
+    public function lxcSuspend($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/status/suspend", $data, 'POST');
     }
@@ -996,7 +996,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcClone($node, $vmid, $data = array())
+    public function lxcClone($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/clone", $data, 'POST');
     }
@@ -1019,7 +1019,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function setLxcConfig($node, $vmid, $data = array())
+    public function setLxcConfig($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/config", $data, 'PUT');
     }
@@ -1042,7 +1042,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcMigrate($node, $vmid, $data = array())
+    public function lxcMigrate($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/migrate", $data, 'POST');
     }
@@ -1054,7 +1054,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcResize($node, $vmid, $data = array())
+    public function lxcResize($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/resize", $data, 'PUT');
     }
@@ -1094,7 +1094,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function lxcSpiceproxy($node, $vmid, $data = array())
+    public function lxcSpiceproxy($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/spiceproxy", $data, 'POST');
     }
@@ -1106,7 +1106,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createLxcTemplate($node, $vmid, $data = array())
+    public function createLxcTemplate($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/template", $data, 'POST');
     }
@@ -1118,7 +1118,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createLxcVncproxy($node, $vmid, $data = array())
+    public function createLxcVncproxy($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/lxc/$vmid/vncproxy", $data, 'POST');
     }
@@ -1156,7 +1156,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createNetwork($node, $data = array())
+    public function createNetwork($node, $data = [])
     {
         return Request::Request("/nodes/$node/network", $data, 'POST');
     }
@@ -1189,7 +1189,7 @@ class Nodes
      * @param string $iface
      * @param array $data
      */
-    public function updateNetworkIface($node, $iface, $data = array())
+    public function updateNetworkIface($node, $iface, $data = [])
     {
         return Request::Request("/nodes/$node/network/$iface", $data, 'PUT');
     }
@@ -1221,7 +1221,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createQemu($node, $data = array())
+    public function createQemu($node, $data = [])
     {
         return Request::Request("/nodes/$node/qemu", $data, "POST");
     }
@@ -1244,7 +1244,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function deleteQemu($node, $vmid, $data = array())
+    public function deleteQemu($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid", $data, "DELETE");
     }
@@ -1278,7 +1278,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createQemuFirewallAliase($node, $vmid, $data = array())
+    public function createQemuFirewallAliase($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/firewall/aliases", $data, 'POST');
     }
@@ -1303,7 +1303,7 @@ class Nodes
      * @param string $name Alias name.
      * @param array $data
      */
-    public function updateQemuFirewallAliaseName($node, $vmid, $name, $data = array())
+    public function updateQemuFirewallAliaseName($node, $vmid, $name, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/firewall/aliases/$name", $data, 'PUT');
     }
@@ -1338,7 +1338,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createQemuFirewallIpset($node, $vmid, $data = array())
+    public function createQemuFirewallIpset($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/firewall/ipset", $data, "POST");
     }
@@ -1363,7 +1363,7 @@ class Nodes
      * @param string $name IP set name.
      * @param array $data
      */
-    public function addQemuFirewallIpsetName($node, $vmid, $name, $data = array())
+    public function addQemuFirewallIpsetName($node, $vmid, $name, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/firewall/ipset/$name", $data, 'POST');
     }
@@ -1402,7 +1402,7 @@ class Nodes
      * @param string $cidr Network/IP specification in CIDR format.
      * @param array $data
      */
-    public function updateQemuFirewallIpsetNameCidr($node, $vmid, $name, $cidr, $data = array())
+    public function updateQemuFirewallIpsetNameCidr($node, $vmid, $name, $cidr, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/firewall/ipset/$name/$cidr", $data, 'PUT');
     }
@@ -1438,7 +1438,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createQemuFirewallRules($node, $vmid, $data = array())
+    public function createQemuFirewallRules($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/firewall/rules", $data, 'POST');
     }
@@ -1461,7 +1461,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function updateQemuFirewallRulesPos($node, $vmid, $pos, $data = array())
+    public function updateQemuFirewallRulesPos($node, $vmid, $pos, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/firewall/rules/$pos", $data, "PUT");
     }
@@ -1510,7 +1510,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function setQemuFirewallOptions($node, $vmid, $data = array())
+    public function setQemuFirewallOptions($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/firewall/options", $data, 'PUT');
     }
@@ -1544,7 +1544,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createQemuSnapshot($node, $vmid, $data = array())
+    public function createQemuSnapshot($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/snapshot", $data, 'POST');
     }
@@ -1593,7 +1593,7 @@ class Nodes
      * @param string   snapname The name of the snapshot.
      * @param array $data
      */
-    public function updateQemuSnapshotConfig($node, $vmid, $snapname, $data = array())
+    public function updateQemuSnapshotConfig($node, $vmid, $snapname, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/snapshot/$snapname/config", $data, 'PUT');
     }
@@ -1606,7 +1606,7 @@ class Nodes
      * @param string   snapname The name of the snapshot.
      * @param array $data
      */
-    public function QemuSnapshotRollback($node, $vmid, $snapname, $data = array())
+    public function QemuSnapshotRollback($node, $vmid, $snapname, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/snapshot/$snapname/rollback", $data, 'POST');
     }
@@ -1640,7 +1640,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuResume($node, $vmid, $data = array())
+    public function qemuResume($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/status/resume", $data, 'POST');
     }
@@ -1652,7 +1652,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuReset($node, $vmid, $data = array())
+    public function qemuReset($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/status/reset", $data, 'POST');
     }
@@ -1664,7 +1664,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuShutdown($node, $vmid, $data = array())
+    public function qemuShutdown($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/status/shutdown", $data, 'POST');
     }
@@ -1676,7 +1676,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuStart($node, $vmid, $data = array())
+    public function qemuStart($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/status/start", $data, 'POST');
     }
@@ -1688,7 +1688,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuStop($node, $vmid, $data = array())
+    public function qemuStop($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/status/stop", $data, 'POST');
     }
@@ -1700,7 +1700,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuReboot($node, $vmid, $data = array())
+    public function qemuReboot($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/status/reboot", $data, 'POST');
     }
@@ -1712,7 +1712,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuSuspend($node, $vmid, $data = array())
+    public function qemuSuspend($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/status/suspend", $data, 'POST');
     }
@@ -1724,7 +1724,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuAgent($node, $vmid, $data = array())
+    public function qemuAgent($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/status/agent", $data, 'POST');
     }
@@ -1736,7 +1736,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuAgentExec($node, $vmid, $data = array())
+    public function qemuAgentExec($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/agent/exec", $data, 'POST');
     }
@@ -1748,9 +1748,35 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuAgentSetUserPassword($node, $vmid, $data = array())
+    public function qemuAgentSetUserPassword($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/agent/set-user-password", $data, 'POST');
+    }
+
+    /**
+     * Get the cloudinit configuration with both current and pending values.
+     * GET /api2/json/nodes/{node}/qemu/{vmid}/cloudinit
+     * @param $node
+     * @param $vmid
+     * @return mixed
+     * @throws ProxmoxException
+     */
+    public function qemuCloudInit($node, $vmid)
+    {
+        return Request::Request("/nodes/$node/qemu/$vmid/cloudinit");
+    }
+
+    /**
+     * Regenerate and change cloudinit config drive.
+     * PUT /api2/json/nodes/{node}/qemu/{vmid}/cloudinit
+     * @param $node
+     * @param $vmid
+     * @return mixed
+     * @throws ProxmoxException
+     */
+    public function regenerateQemuCloudInit($node, $vmid)
+    {
+        return Request::Request("/nodes/$node/qemu/$vmid/cloudinit", [], 'PUT');
     }
 
     /**
@@ -1760,7 +1786,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuClone($node, $vmid, $data = array())
+    public function qemuClone($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/clone", $data, 'POST');
     }
@@ -1783,7 +1809,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createQemuConfig($node, $vmid, $data = array())
+    public function createQemuConfig($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/config", $data, 'POST');
     }
@@ -1795,7 +1821,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function setQemuConfig($node, $vmid, $data = array())
+    public function setQemuConfig($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/config", $data, 'PUT');
     }
@@ -1818,7 +1844,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuMigrate($node, $vmid, $data = array())
+    public function qemuMigrate($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/migrate", $data, 'POST');
     }
@@ -1830,7 +1856,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuMonitor($node, $vmid, $data = array())
+    public function qemuMonitor($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/monitor", $data, 'POST');
     }
@@ -1842,7 +1868,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuMoveDisk($node, $vmid, $data = array())
+    public function qemuMoveDisk($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/move_disk", $data, 'POST');
     }
@@ -1865,7 +1891,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuResize($node, $vmid, $data = array())
+    public function qemuResize($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/resize", $data, 'PUT');
     }
@@ -1905,7 +1931,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuSendkey($node, $vmid, $data = array())
+    public function qemuSendkey($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/sendkey", $data, 'PUT');
     }
@@ -1917,7 +1943,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuSpiceproxy($node, $vmid, $data = array())
+    public function qemuSpiceproxy($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/spiceproxy", $data, 'POST');
     }
@@ -1929,7 +1955,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createQemuTemplate($node, $vmid, $data = array())
+    public function createQemuTemplate($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/template", $data, 'POST');
     }
@@ -1941,7 +1967,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function qemuUnlink($node, $vmid, $data = array())
+    public function qemuUnlink($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/unlink", $data, 'PUT');
     }
@@ -1953,7 +1979,7 @@ class Nodes
      * @param integer $vmid The (unique) ID of the VM.
      * @param array $data
      */
-    public function createQemuVncproxy($node, $vmid, $data = array())
+    public function createQemuVncproxy($node, $vmid, $data = [])
     {
         return Request::Request("/nodes/$node/qemu/$vmid/vncproxy", $data, 'POST');
     }
@@ -2012,7 +2038,7 @@ class Nodes
      * @param string $id Replication Job ID. The ID is composed of a Guest ID and a job number, separated by a hyphen, i.e. '<GUEST>-<JOBNUM>'.
      * @param array $data
      */
-    public function replicationScheduleNow($node, $id, $data = array())
+    public function replicationScheduleNow($node, $id, $data = [])
     {
         return Request::Request("/nodes/$node/replication/$id/schedule_now", $data, 'POST');
     }
@@ -2126,7 +2152,7 @@ class Nodes
      * @param enum $service Service ID
      * @param array $data
      */
-    public function servicesReload($node, $service, $data = array())
+    public function servicesReload($node, $service, $data = [])
     {
         return Request::Request("/nodes/$node/services/$service/reload", $data, 'POST');
     }
@@ -2138,7 +2164,7 @@ class Nodes
      * @param enum $service Service ID
      * @param array $data
      */
-    public function servicesRestart($node, $service, $data = array())
+    public function servicesRestart($node, $service, $data = [])
     {
         return Request::Request("/nodes/$node/services/$service/restart", $data, 'POST');
     }
@@ -2150,7 +2176,7 @@ class Nodes
      * @param enum $service Service ID
      * @param array $data
      */
-    public function servicesStart($node, $service, $data = array())
+    public function servicesStart($node, $service, $data = [])
     {
         return Request::Request("/nodes/$node/services/$service/start", $data, 'POST');
     }
@@ -2162,7 +2188,7 @@ class Nodes
      * @param enum $service Service ID
      * @param array $data
      */
-    public function servicesStop($node, $service, $data = array())
+    public function servicesStop($node, $service, $data = [])
     {
         return Request::Request("/nodes/$node/services/$service/stop", $data, 'POST');
     }
@@ -2225,7 +2251,7 @@ class Nodes
      * @param string $storage The storage identifier.
      * @param array $data
      */
-    public function storageContent($node, $storage, $data = array())
+    public function storageContent($node, $storage, $data = [])
     {
         return Request::Request("/nodes/$node/storage/$storage/content", $data, "POST");
     }
@@ -2248,7 +2274,7 @@ class Nodes
      * @param string $storage The storage identifier.
      * @param array $data
      */
-    public function copyStorageContentVolume($node, $storage, $volume, $data = array())
+    public function copyStorageContentVolume($node, $storage, $volume, $data = [])
     {
         return Request::Request("/nodes/$node/storage/$storage/content/$volume", $data, "POST");
     }
@@ -2304,7 +2330,7 @@ class Nodes
      * @param string $storage The storage identifier.
      * @param array $data
      */
-    public function storageUpload($node, $data = array())
+    public function storageUpload($node, $data = [])
     {
         return Request::Request("/nodes/$node/storage/upload", $data, "POST");
     }
@@ -2381,7 +2407,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createVzdump($node, $data = array())
+    public function createVzdump($node, $data = [])
     {
         return Request::Request("/nodes/$node/vzdump", $data, "POST");
     }
@@ -2412,7 +2438,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function downloadTemplate($node, $data = array())
+    public function downloadTemplate($node, $data = [])
     {
         return Request::Request("/nodes/$node/aplinfo", $data, "POST");
     }
@@ -2433,7 +2459,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function setDns($node, $data = array())
+    public function setDns($node, $data = [])
     {
         return Request::Request("/nodes/$node/dns", $data, "PUT");
     }
@@ -2444,7 +2470,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function Execute($node, $data = array())
+    public function Execute($node, $data = [])
     {
         return Request::Request("/nodes/$node/execute", $data, "POST");
     }
@@ -2455,7 +2481,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function MigrateAll($node, $data = array())
+    public function MigrateAll($node, $data = [])
     {
         return Request::Request("/nodes/$node/migrateall", $data, "POST");
     }
@@ -2512,7 +2538,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function SpiceShell($node, $data = array())
+    public function SpiceShell($node, $data = [])
     {
         return Request::Request("/nodes/$node/spiceshell", $data, "POST");
     }
@@ -2523,7 +2549,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function StartAll($node, $data = array())
+    public function StartAll($node, $data = [])
     {
         return Request::Request("/nodes/$node/startall", $data, "POST");
     }
@@ -2534,7 +2560,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function Reboot($node, $data = array())
+    public function Reboot($node, $data = [])
     {
         return Request::Request("/nodes/$node/status", $data, "POST");
     }
@@ -2545,7 +2571,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function StopAll($node, $data = array())
+    public function StopAll($node, $data = [])
     {
         return Request::Request("/nodes/$node/stopall", $data, "POST");
     }
@@ -2566,7 +2592,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function updateSubscription($node, $data = array())
+    public function updateSubscription($node, $data = [])
     {
         return Request::Request("/nodes/$node/subscription", $data, "POST");
     }
@@ -2577,7 +2603,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function setSubscription($node, $data = array())
+    public function setSubscription($node, $data = [])
     {
         return Request::Request("/nodes/$node/subscription", $data, "PUT");
     }
@@ -2616,7 +2642,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function setTime($node, $data = array())
+    public function setTime($node, $data = [])
     {
         return Request::Request("/nodes/$node/time", $data, "PUT");
     }
@@ -2637,7 +2663,7 @@ class Nodes
      * @param string $node The cluster node name.
      * @param array $data
      */
-    public function createVNCShell($node, $data = array())
+    public function createVNCShell($node, $data = [])
     {
         return Request::Request("/nodes/$node/vncshell", $data, "POST");
     }
